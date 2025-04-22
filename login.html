@@ -9,6 +9,24 @@
     <h2>로그인</h2>
     <p>아이디: <input type="text" name="userid" id="userid" /></p>
     <p>비밀번호: <input type="password" name="userpw" id="userpw" /></p>
-    <button>로그인</button>
+    <button id="loginBtn" onclick="location.href='result.html'">로그인</button>
+
+    <script>
+      document.getElementById("loginBtn").addEventListener("click", () => {
+        const userid = document.getElementById("userid").value;
+        const userpw = document.getElementById("userpw").value;
+        fetch(`http://127.0.0.1:3000/login?userid=${userid}&userpw=${userpw}`)
+          .then((res) => {
+            if (!res.ok) throw new Error(`서버 오류: ${res.status}`);
+          })
+          .then((data) => {
+            console.log("서버 응답: " + data);
+          });
+
+        wndow.location.href = `result.html?userid=${encodeURIComponent(
+          userid
+        )}&userpw=${encodeURIComponent(userpw)}`;
+      });
+    </script>
   </body>
 </html>

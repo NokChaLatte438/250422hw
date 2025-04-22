@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>결과</title>
+  </head>
+  <body>
+    <h2>입력 정보</h2>
+    <p id="result"></p>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const userid = params.get("userid");
+      const userpw = params.get("userpw");
+
+      document.getElementById(
+        "result"
+      ).innerText = `아이디: ${userid}\n비밀번호: ${userpw}`;
+    </script>
+  </body>
+</html>
