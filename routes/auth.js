@@ -3,7 +3,7 @@ const router = express.Router();
 router.use(express.json());
 /**
  * @swagger
- * /signup:
+ * /auth/signup:
  *   post:
  *     summary: 회원가입
  *     requestBody:
@@ -30,7 +30,7 @@ router.use(express.json());
 
 /**
  * @swagger
- * /login:
+ * /auth/login:
  *   post:
  *     summary: 로그인
  *     requestBody:
@@ -51,7 +51,7 @@ router.use(express.json());
 
 /**
  * @swagger
- * /user:
+ * /auth/user:
  *   put:
  *     summary: 회원정보 수정
  *     requestBody:
@@ -76,7 +76,7 @@ router.use(express.json());
 
 /**
  * @swagger
- * /user:
+ * /auth/user:
  *   delete:
  *     summary: 계정 삭제
  *     requestBody:
